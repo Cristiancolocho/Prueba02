@@ -6,6 +6,8 @@ registro de datos. */
 
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.Iterator;  
+
 
 public class main {
     public static void main(String[] args) {
@@ -39,7 +41,9 @@ public class main {
         }
 
         System.out.println("\nProductos registrados:");
-        for (Pruducto p : productos) {
+       Iterator<Pruducto> it = productos.iterator();
+        while (it.hasNext()) {
+            Pruducto p = it.next();
             System.out.println("ID: " + p.getId() + ", Nombre: " + p.getNombre() +
                                ", Marca: " + p.getMarca() + ", Precio: " + p.getPrecio());
         }
